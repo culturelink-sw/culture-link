@@ -1,0 +1,18 @@
+{
+  "common": {
+    "appName": "Culture Link",
+    "login": "Login",
+    "logout": "Logout",
+    "signup": "Sign Up",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "matches": {
+    "title": "Find Friends",
+    "noResults": "No matches found"
+  },
+  "chat": {
+    "title": "Chat",
+    "placeholder": "Type a message..."
+  }
+}
