@@ -77,7 +77,7 @@ export default function LoginPage() {
 
           <p className="mt-4 text-center text-sm text-muted-foreground">
             계정이 없다면?{' '}
-            <Link href="/signup" className="underline text-[#E91E63]">
+            <Link href="/signup" className="underline text-coral-500 hover:text-coral-600">
               회원가입
             </Link>
           </p>

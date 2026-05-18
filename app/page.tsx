@@ -5,13 +5,13 @@ export default function LandingPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-8 p-4">
       {/* 일러스트 placeholder — 팀원이 디자인 시안대로 교체 예정 */}
-      <div className="flex h-48 w-48 items-center justify-center rounded-full bg-pink-50 text-6xl">
+      <div className="flex h-48 w-48 items-center justify-center rounded-full bg-surface-pink text-6xl">
         🌏
       </div>
 
       {/* 타이틀 */}
       <div className="space-y-2 text-center">
-        <h1 className="text-4xl font-bold" style={{ color: '#E91E63' }}>
+        <h1 className="text-4xl font-bold text-coral-500">
           Culture Link
         </h1>
         <p className="text-lg text-muted-foreground">
@@ -22,7 +22,7 @@ export default function LandingPage() {
       {/* CTA 버튼 */}
       <div className="flex w-full max-w-xs flex-col gap-3">
         <Link href="/signup">
-          <Button className="w-full" style={{ backgroundColor: '#E91E63' }}>
+          <Button className="w-full bg-coral-500 hover:bg-coral-600">
             시작하기
           </Button>
         </Link>

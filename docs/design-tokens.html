@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Culture Link — 디자인 토큰</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/pretendardvariable.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Pretendard Variable", Pretendard, sans-serif; background: #FBF7F6; color: #3A302D; padding: 40px 24px; }
+  h1 { font-size: 28px; font-weight: 700; color: #DC4757; margin-bottom: 4px; }
+  .subtitle { color: #7E6E69; margin-bottom: 40px; }
+  h2 { font-size: 14px; font-weight: 600; color: #7E6E69; letter-spacing: .08em; text-transform: uppercase; margin: 32px 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
+  .swatch { border-radius: 10px; overflow: hidden; box-shadow: 0 1px 2px rgba(37,29,27,.08); }
+  .swatch-color { height: 56px; }
+  .swatch-info { background: #fff; padding: 8px 10px; }
+  .swatch-name { font-size: 11px; font-weight: 600; color: #574A46; }
+  .swatch-hex  { font-size: 11px; color: #A89893; font-family: monospace; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .token-item { display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 10px; padding: 10px 14px; box-shadow: 0 1px 2px rgba(37,29,27,.08); min-width: 220px; }
+  .token-preview { width: 32px; height: 32px; border-radius: 6px; flex-shrink: 0; }
+  .token-name  { font-size: 12px; font-weight: 600; color: #574A46; }
+  .token-value { font-size: 11px; color: #A89893; font-family: monospace; }
+  .radius-row  { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+  .radius-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .radius-box  { width: 64px; height: 40px; background: #DC4757; opacity: .2; border: 2px solid #DC4757; }
+  .radius-label{ font-size: 11px; color: #574A46; font-weight: 600; text-align: center; }
+  .radius-val  { font-size: 10px; color: #A89893; }
+  .shadow-row  { display: flex; flex-wrap: wrap; gap: 16px; }
+  .shadow-item { width: 100px; height: 60px; background: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #574A46; }
+  .font-row    { display: flex; flex-direction: column; gap: 12px; }
+  .font-item   { background: #fff; border-radius: 10px; padding: 14px 18px; box-shadow: 0 1px 2px rgba(37,29,27,.08); }
+  .font-name   { font-size: 11px; font-weight: 700; color: #DC4757; margin-bottom: 4px; }
+  .font-sample { font-size: 20px; color: #3A302D; }
+  .font-sub    { font-size: 11px; color: #A89893; }
+</style>
+</head>
+<body>
+<h1>Culture Link</h1>
+<p class="subtitle">디자인 토큰 레퍼런스 — Tailwind 유틸리티 클래스명과 함께 표기</p>
+
+<!-- Coral -->
+<h2>🎨 Coral (브랜드 메인)</h2>
+<div class="grid">
+  <div class="swatch"><div class="swatch-color" style="background:#FFF1F2"></div><div class="swatch-info"><div class="swatch-name">coral-50</div><div class="swatch-hex">#FFF1F2</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#FFE0E3"></div><div class="swatch-info"><div class="swatch-name">coral-100</div><div class="swatch-hex">#FFE0E3</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#FCC4C9"></div><div class="swatch-info"><div class="swatch-name">coral-200</div><div class="swatch-hex">#FCC4C9</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#F69CA4"></div><div class="swatch-info"><div class="swatch-name">coral-300</div><div class="swatch-hex">#F69CA4</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#ED6E78"></div><div class="swatch-info"><div class="swatch-name">coral-400</div><div class="swatch-hex">#ED6E78</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#DC4757"></div><div class="swatch-info"><div class="swatch-name">coral-500 ★</div><div class="swatch-hex">#DC4757</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#C12F40"></div><div class="swatch-info"><div class="swatch-name">coral-600</div><div class="swatch-hex">#C12F40</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#9C2333"></div><div class="swatch-info"><div class="swatch-name">coral-700</div><div class="swatch-hex">#9C2333</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#761926"></div><div class="swatch-info"><div class="swatch-name">coral-800</div><div class="swatch-hex">#761926</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#4E1019"></div><div class="swatch-info"><div class="swatch-name">coral-900</div><div class="swatch-hex">#4E1019</div></div></div>
+</div>
+
+<!-- Ink -->
+<h2>🖋 Ink (텍스트 · 배경)</h2>
+<div class="grid">
+  <div class="swatch"><div class="swatch-color" style="background:#FFFFFF;border:1px solid #eee"></div><div class="swatch-info"><div class="swatch-name">ink-0</div><div class="swatch-hex">#FFFFFF</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#FBF7F6"></div><div class="swatch-info"><div class="swatch-name">ink-50</div><div class="swatch-hex">#FBF7F6</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#F4EEEC"></div><div class="swatch-info"><div class="swatch-name">ink-100</div><div class="swatch-hex">#F4EEEC</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#E8DEDB"></div><div class="swatch-info"><div class="swatch-name">ink-200</div><div class="swatch-hex">#E8DEDB</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#CFC1BD"></div><div class="swatch-info"><div class="swatch-name">ink-300</div><div class="swatch-hex">#CFC1BD</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#A89893"></div><div class="swatch-info"><div class="swatch-name">ink-400</div><div class="swatch-hex">#A89893</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#7E6E69"></div><div class="swatch-info"><div class="swatch-name">ink-500</div><div class="swatch-hex">#7E6E69</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#574A46"></div><div class="swatch-info"><div class="swatch-name">ink-600</div><div class="swatch-hex">#574A46</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#3A302D"></div><div class="swatch-info"><div class="swatch-name">ink-700 ★</div><div class="swatch-hex">#3A302D</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#251D1B"></div><div class="swatch-info"><div class="swatch-name">ink-800</div><div class="swatch-hex">#251D1B</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#15100F"></div><div class="swatch-info"><div class="swatch-name">ink-900</div><div class="swatch-hex">#15100F</div></div></div>
+</div>
+
+<!-- Culture -->
+<h2>🌏 Culture (국가별)</h2>
+<div class="row">
+  <div class="token-item"><div class="token-preview" style="background:#DC4757"></div><div><div class="token-name">culture-kr</div><div class="token-value">#DC4757</div></div></div>
+  <div class="token-item"><div class="token-preview" style="background:#3D6BE5"></div><div><div class="token-name">culture-en</div><div class="token-value">#3D6BE5</div></div></div>
+  <div class="token-item"><div class="token-preview" style="background:#F4A93A"></div><div><div class="token-name">culture-es</div><div class="token-value">#F4A93A</div></div></div>
+  <div class="token-item"><div class="token-preview" style="background:#D43E2D"></div><div><div class="token-name">culture-cn</div><div class="token-value">#D43E2D</div></div></div>
+  <div class="token-item"><div class="token-preview" style="background:#B084DA"></div><div><div class="token-name">culture-jp</div><div class="token-value">#B084DA</div></div></div>
+</div>
+
+<!-- Semantic -->
+<h2>✅ Semantic</h2>
+<div class="row">
+  <div class="token-item"><div class="token-preview" style="background:#2F9E6A"></div><div><div class="token-name">success</div><div class="token-value">#2F9E6A</div></div></div>
+  <div class="token-item"><div class="token-preview" style="background:#E89A2B"></div><div><div class="token-name">warning</div><div class="token-value">#E89A2B</div></div></div>
+  <div class="token-item"><div class="token-preview" style="background:#D8453A"></div><div><div class="token-name">danger</div><div class="token-value">#D8453A</div></div></div>
+  <div class="token-item"><div class="token-preview" style="background:#3D6BE5"></div><div><div class="token-name">info</div><div class="token-value">#3D6BE5</div></div></div>
+</div>
+
+<!-- Surface -->
+<h2>🪟 Surface</h2>
+<div class="row">
+  <div class="token-item"><div class="token-preview" style="background:#FBF7F6;border:1px solid #eee"></div><div><div class="token-name">surface-canvas</div><div class="token-value">#FBF7F6 · 전체 배경</div></div></div>
+  <div class="token-item"><div class="token-preview" style="background:#FFFFFF;border:1px solid #eee"></div><div><div class="token-name">surface-raised</div><div class="token-value">#FFFFFF · 카드</div></div></div>
+  <div class="token-item"><div class="token-preview" style="background:#FFF1F2"></div><div><div class="token-name">surface-pink</div><div class="token-value">#FFF1F2 · 강조</div></div></div>
+  <div class="token-item"><div class="token-preview" style="background:#F4EEEC"></div><div><div class="token-name">surface-sunken</div><div class="token-value">#F4EEEC · 눌림</div></div></div>
+</div>
+
+<!-- Radius -->
+<h2>⬛ Border Radius</h2>
+<div class="radius-row">
+  <div class="radius-item"><div class="radius-box" style="border-radius:4px"></div><div class="radius-label">rounded-xs</div><div class="radius-val">4px</div></div>
+  <div class="radius-item"><div class="radius-box" style="border-radius:8px"></div><div class="radius-label">rounded-sm</div><div class="radius-val">8px</div></div>
+  <div class="radius-item"><div class="radius-box" style="border-radius:12px"></div><div class="radius-label">rounded-md</div><div class="radius-val">12px</div></div>
+  <div class="radius-item"><div class="radius-box" style="border-radius:16px"></div><div class="radius-label">rounded-lg</div><div class="radius-val">16px</div></div>
+  <div class="radius-item"><div class="radius-box" style="border-radius:20px"></div><div class="radius-label">rounded-xl</div><div class="radius-val">20px</div></div>
+  <div class="radius-item"><div class="radius-box" style="border-radius:28px"></div><div class="radius-label">rounded-2xl</div><div class="radius-val">28px</div></div>
+  <div class="radius-item"><div class="radius-box" style="border-radius:999px"></div><div class="radius-label">rounded-pill</div><div class="radius-val">999px</div></div>
+</div>
+
+<!-- Shadow -->
+<h2>🌑 Shadow</h2>
+<div class="shadow-row">
+  <div class="shadow-item" style="box-shadow:0 1px 2px rgba(37,29,27,.06),0 1px 1px rgba(37,29,27,.04)">shadow-1</div>
+  <div class="shadow-item" style="box-shadow:0 2px 6px rgba(37,29,27,.06),0 4px 12px rgba(37,29,27,.05)">shadow-2</div>
+  <div class="shadow-item" style="box-shadow:0 6px 16px rgba(37,29,27,.08),0 12px 28px rgba(37,29,27,.06)">shadow-3</div>
+  <div class="shadow-item" style="box-shadow:0 12px 32px rgba(37,29,27,.10),0 24px 60px rgba(37,29,27,.08)">shadow-4</div>
+  <div class="shadow-item" style="box-shadow:0 8px 20px rgba(220,71,87,.25);color:#DC4757">shadow-coral</div>
+</div>
+
+<!-- Font -->
+<h2>🔤 Font</h2>
+<div class="font-row">
+  <div class="font-item"><div class="font-name">font-kr</div><div class="font-sample" style="font-family:'Pretendard Variable',sans-serif">문화를 연결하는 플랫폼, Culture Link</div><div class="font-sub">Pretendard Variable</div></div>
+  <div class="font-item"><div class="font-name">font-en</div><div class="font-sample" style="font-family:'Inter',sans-serif">Connecting cultures worldwide</div><div class="font-sub">Inter</div></div>
+  <div class="font-item"><div class="font-name">font-mono</div><div class="font-sample" style="font-family:'JetBrains Mono',monospace">const greeting = "안녕하세요!"</div><div class="font-sub">JetBrains Mono</div></div>
+</div>
+
+<br><br>
+</body>
+</html>

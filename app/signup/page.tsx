@@ -109,7 +109,7 @@ export default function SignupPage() {
 
           <p className="mt-4 text-center text-sm text-muted-foreground">
             이미 계정이 있다면?{' '}
-            <Link href="/login" className="underline text-[#E91E63]">
+            <Link href="/login" className="underline text-coral-500 hover:text-coral-600">
               로그인
             </Link>
           </p>

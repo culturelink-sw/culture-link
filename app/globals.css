@@ -4,131 +4,229 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --color-brand: var(--brand);
-  --color-brand-foreground: var(--brand-foreground);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+/* ============================================================
+   Culture Link 디자인 토큰
+   @theme 에 등록하면 Tailwind 유틸리티 클래스로 자동 노출됨
+   예) bg-coral-500 / text-ink-700 / font-kr / rounded-pill / shadow-2
+   ============================================================ */
+
+@theme {
+  /* --------------------------------------------------
+     Coral — 브랜드 메인 컬러
+     -------------------------------------------------- */
+  --color-coral-50:  #FFF1F2;
+  --color-coral-100: #FFE0E3;
+  --color-coral-200: #FCC4C9;
+  --color-coral-300: #F69CA4;
+  --color-coral-400: #ED6E78;
+  --color-coral-500: #DC4757;
+  --color-coral-600: #C12F40;
+  --color-coral-700: #9C2333;
+  --color-coral-800: #761926;
+  --color-coral-900: #4E1019;
+
+  /* --------------------------------------------------
+     Ink — 텍스트 · 배경 (따뜻한 그레이)
+     -------------------------------------------------- */
+  --color-ink-0:   #FFFFFF;
+  --color-ink-50:  #FBF7F6;
+  --color-ink-100: #F4EEEC;
+  --color-ink-200: #E8DEDB;
+  --color-ink-300: #CFC1BD;
+  --color-ink-400: #A89893;
+  --color-ink-500: #7E6E69;
+  --color-ink-600: #574A46;
+  --color-ink-700: #3A302D;
+  --color-ink-800: #251D1B;
+  --color-ink-900: #15100F;
+
+  /* --------------------------------------------------
+     Culture — 국가별 대표색
+     -------------------------------------------------- */
+  --color-culture-kr: #DC4757;
+  --color-culture-en: #3D6BE5;
+  --color-culture-es: #F4A93A;
+  --color-culture-cn: #D43E2D;
+  --color-culture-jp: #B084DA;
+
+  /* --------------------------------------------------
+     Semantic
+     -------------------------------------------------- */
+  --color-success: #2F9E6A;
+  --color-warning: #E89A2B;
+  --color-danger:  #D8453A;
+  --color-info:    #3D6BE5;
+
+  /* --------------------------------------------------
+     Surface
+     -------------------------------------------------- */
+  --color-surface-canvas: #FBF7F6;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-pink:   #FFF1F2;
+  --color-surface-sunken: #F4EEEC;
+
+  /* --------------------------------------------------
+     Border Radius
+     rounded-xs / rounded-sm / ... / rounded-pill
+     -------------------------------------------------- */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   20px;
+  --radius-2xl:  28px;
+  --radius-pill: 999px;
+
+  /* --------------------------------------------------
+     Shadow  → shadow-1 / shadow-2 / shadow-3 / shadow-4 / shadow-coral
+     -------------------------------------------------- */
+  --shadow-1:     0 1px 2px rgba(37,29,27,.06), 0 1px 1px rgba(37,29,27,.04);
+  --shadow-2:     0 2px 6px rgba(37,29,27,.06), 0 4px 12px rgba(37,29,27,.05);
+  --shadow-3:     0 6px 16px rgba(37,29,27,.08), 0 12px 28px rgba(37,29,27,.06);
+  --shadow-4:     0 12px 32px rgba(37,29,27,.10), 0 24px 60px rgba(37,29,27,.08);
+  --shadow-coral: 0 8px 20px rgba(220,71,87,.25);
+
+  /* --------------------------------------------------
+     Font  → font-kr / font-en / font-mono
+     -------------------------------------------------- */
+  --font-kr:   "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-en:   var(--font-inter), "Inter", -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
 }
 
+/* ============================================================
+   shadcn/ui 색상 변수 → Tailwind inline (CSS var 참조)
+   ============================================================ */
+@theme inline {
+  --color-background:              var(--background);
+  --color-foreground:              var(--foreground);
+  --color-card:                    var(--card);
+  --color-card-foreground:         var(--card-foreground);
+  --color-popover:                 var(--popover);
+  --color-popover-foreground:      var(--popover-foreground);
+  --color-primary:                 var(--primary);
+  --color-primary-foreground:      var(--primary-foreground);
+  --color-secondary:               var(--secondary);
+  --color-secondary-foreground:    var(--secondary-foreground);
+  --color-muted:                   var(--muted);
+  --color-muted-foreground:        var(--muted-foreground);
+  --color-accent:                  var(--accent);
+  --color-accent-foreground:       var(--accent-foreground);
+  --color-destructive:             var(--destructive);
+  --color-border:                  var(--border);
+  --color-input:                   var(--input);
+  --color-ring:                    var(--ring);
+  --color-sidebar:                 var(--sidebar);
+  --color-sidebar-foreground:      var(--sidebar-foreground);
+  --color-sidebar-primary:         var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent:          var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border:          var(--sidebar-border);
+  --color-sidebar-ring:            var(--sidebar-ring);
+  --color-chart-1:                 var(--chart-1);
+  --color-chart-2:                 var(--chart-2);
+  --color-chart-3:                 var(--chart-3);
+  --color-chart-4:                 var(--chart-4);
+  --color-chart-5:                 var(--chart-5);
+}
+
+/* ============================================================
+   shadcn 시스템 변수 — Culture Link 토큰 기반으로 재정의
+   ============================================================ */
 :root {
-  --brand: #E91E63;
-  --brand-foreground: #ffffff;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* 배경 / 텍스트 */
+  --background:         #FBF7F6;   /* ink-50  = surface-canvas */
+  --foreground:         #3A302D;   /* ink-700 */
+
+  /* 카드 / 팝오버 */
+  --card:               #FFFFFF;
+  --card-foreground:    #3A302D;
+  --popover:            #FFFFFF;
+  --popover-foreground: #3A302D;
+
+  /* Primary → coral-500 (버튼·링크 기본색) */
+  --primary:            #DC4757;
+  --primary-foreground: #FFFFFF;
+
+  /* Secondary → ink-100 */
+  --secondary:          #F4EEEC;
+  --secondary-foreground: #3A302D;
+
+  /* Muted */
+  --muted:              #F4EEEC;
+  --muted-foreground:   #7E6E69;   /* ink-500 */
+
+  /* Accent → coral-50 */
+  --accent:             #FFF1F2;
+  --accent-foreground:  #DC4757;
+
+  /* Destructive */
+  --destructive:        #D8453A;
+
+  /* Border / Input / Ring */
+  --border:             #E8DEDB;   /* ink-200 */
+  --input:              #E8DEDB;
+  --ring:               #DC4757;   /* coral-500 */
+
+  /* Radius 기본값 (shadcn 내부용) */
+  --radius: 0.75rem;               /* 12px = r-md */
+
+  /* Charts */
+  --chart-1: #DC4757;
+  --chart-2: #3D6BE5;
+  --chart-3: #F4A93A;
+  --chart-4: #2F9E6A;
+  --chart-5: #B084DA;
+
+  /* Sidebar */
+  --sidebar:                    #FFFFFF;
+  --sidebar-foreground:         #3A302D;
+  --sidebar-primary:            #DC4757;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent:             #FFF1F2;
+  --sidebar-accent-foreground:  #DC4757;
+  --sidebar-border:             #E8DEDB;
+  --sidebar-ring:               #DC4757;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background:         #15100F;
+  --foreground:         #FBF7F6;
+  --card:               #251D1B;
+  --card-foreground:    #FBF7F6;
+  --popover:            #251D1B;
+  --popover-foreground: #FBF7F6;
+  --primary:            #ED6E78;   /* coral-400 (다크에서 밝게) */
+  --primary-foreground: #15100F;
+  --secondary:          #3A302D;
+  --secondary-foreground: #FBF7F6;
+  --muted:              #3A302D;
+  --muted-foreground:   #A89893;
+  --accent:             #4E1019;
+  --accent-foreground:  #ED6E78;
+  --destructive:        #ED6E78;
+  --border:             rgba(255,255,255,.1);
+  --input:              rgba(255,255,255,.15);
+  --ring:               #ED6E78;
+  --sidebar:            #251D1B;
+  --sidebar-foreground: #FBF7F6;
+  --sidebar-primary:    #ED6E78;
+  --sidebar-primary-foreground: #15100F;
+  --sidebar-accent:     #4E1019;
+  --sidebar-accent-foreground:  #ED6E78;
+  --sidebar-border:     rgba(255,255,255,.1);
+  --sidebar-ring:       #ED6E78;
 }
 
+/* ============================================================
+   Base styles
+   ============================================================ */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
+    @apply bg-background text-foreground font-kr;
   }
 }
